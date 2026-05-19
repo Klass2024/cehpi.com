@@ -1,1 +1,146 @@
-
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CEHPI — Health & Pharmaceutical Intelligence</title>
+  <meta name="description" content="CEHPI accompagne les gouvernements, les organisations de santé mondiale et les acteurs du secteur pharmaceutique dans la production, l’analyse et l’utilisation de données probantes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green:#7ACC44;
+      --purple:#894FC8;
+      --black:#050505;
+      --ink:#151515;
+      --muted:#5d6268;
+      --line:#e8e8e8;
+      --soft:#f7f9f5;
+      --soft-purple:#f6f0fc;
+      --white:#fff;
+      --max:1180px;
+      --radius:28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.06)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:190px}.brand img{width:168px;height:auto}
+    .links{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:700;color:#232323}.links a{position:relative}.links a:after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:.2s}.links a:hover:after{transform:scaleX(1)}
+    .nav-actions{display:flex;align-items:center;gap:12px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:12px 18px;font-weight:800;font-size:14px;border:1px solid transparent;transition:.2s;cursor:pointer}.btn-primary{background:var(--green);color:#062000}.btn-primary:hover{filter:brightness(.95);transform:translateY(-1px)}.btn-ghost{border-color:#d7d7d7;color:#111;background:#fff}.btn-ghost:hover{border-color:#111}.menu-btn{display:none;background:#fff;border:1px solid #ddd;border-radius:999px;padding:10px 14px;font-weight:800}
+    .hero{position:relative;overflow:hidden;background:radial-gradient(circle at 10% 0%,rgba(122,204,68,.22),transparent 28%),radial-gradient(circle at 86% 12%,rgba(137,79,200,.16),transparent 30%),linear-gradient(180deg,#fff,#fbfcfa);border-bottom:1px solid var(--line)}
+    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:end;padding:88px 0 70px}.eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:24px;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--purple)}.dot{width:10px;height:10px;border-radius:50%;background:var(--green)}
+    h1{margin:0;font-size:clamp(44px,6vw,86px);line-height:.95;letter-spacing:-.06em;font-weight:900;color:#080808}.lead{font-size:clamp(18px,2.1vw,23px);color:#3d4145;max-width:760px;margin:28px 0 34px}.hero-cta{display:flex;gap:14px;flex-wrap:wrap}.hero-panel{background:#101010;color:#fff;border-radius:36px;padding:34px;min-height:430px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 24px 80px rgba(0,0,0,.22);position:relative;overflow:hidden}.hero-panel:before{content:"";position:absolute;inset:auto -80px -90px auto;width:270px;height:270px;background:var(--purple);border-radius:50%;filter:blur(10px);opacity:.55}.hero-panel:after{content:"";position:absolute;inset:40px auto auto -70px;width:190px;height:190px;background:var(--green);border-radius:50%;filter:blur(12px);opacity:.55}.panel-content{position:relative;z-index:1}.panel-kicker{color:var(--green);font-weight:900;text-transform:uppercase;letter-spacing:.13em;font-size:12px}.panel-title{font-size:34px;line-height:1.05;font-weight:900;letter-spacing:-.04em;margin:14px 0}.panel-text{color:#d7d7d7;font-size:16px}.metric-row{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}.metric{border-top:1px solid rgba(255,255,255,.22);padding-top:14px}.metric strong{font-size:28px;display:block;color:#fff}.metric span{font-size:12px;color:#dcdcdc}
+    .section{padding:86px 0}.section-dark{background:#050505;color:#fff}.section-soft{background:var(--soft)}.section-head{display:flex;justify-content:space-between;gap:36px;align-items:end;margin-bottom:36px}.kicker{font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--purple)}.section-dark .kicker{color:var(--green)}h2{margin:10px 0 0;font-size:clamp(34px,4.5vw,58px);line-height:1;letter-spacing:-.05em}.section-copy{max-width:540px;color:#666;font-size:18px}.section-dark .section-copy{color:#cfcfcf}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:#fff;min-height:260px;transition:.2s}.card:hover{transform:translateY(-4px);box-shadow:0 18px 48px rgba(0,0,0,.08)}.card .num{font-size:13px;font-weight:900;color:var(--purple);margin-bottom:22px}.card h3{margin:0 0 14px;font-size:23px;line-height:1.08;letter-spacing:-.03em}.card p{margin:0;color:#5f6367}.accent-card{background:#0b0b0b;color:#fff;border-color:#0b0b0b}.accent-card p{color:#d3d3d3}.accent-card .num{color:var(--green)}
+    .split{display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:start}.pill-list{display:grid;gap:12px}.pill{display:flex;align-items:center;justify-content:space-between;gap:14px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05);border-radius:22px;padding:18px 20px}.pill span{font-weight:800}.pill small{color:#bfbfbf}.founder{background:#fff;border-radius:34px;padding:34px;color:#111}.founder h3{font-size:30px;line-height:1.05;margin:0 0 10px;letter-spacing:-.04em}.founder p{color:#555}.tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.tag{font-size:12px;font-weight:900;border:1px solid #e0e0e0;border-radius:999px;padding:8px 10px;background:#fff}.tag.green{background:rgba(122,204,68,.14);border-color:rgba(122,204,68,.4)}.tag.purple{background:rgba(137,79,200,.12);border-color:rgba(137,79,200,.35)}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service{background:#fff;border:1px solid var(--line);border-radius:30px;padding:30px}.service h3{font-size:26px;line-height:1.05;margin:0 0 18px;letter-spacing:-.04em}.service ul{margin:0;padding-left:18px;color:#565b60}.service li{margin:9px 0}.service.featured{background:linear-gradient(145deg,var(--green),#b7ef95);border-color:transparent}.service.featured ul{color:#173208}
+    .academy{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.track{background:#111;border:1px solid rgba(255,255,255,.12);border-radius:30px;padding:30px}.track h3{margin:0 0 16px;font-size:24px;line-height:1.08}.track ul{margin:0;padding-left:18px;color:#d3d3d3}.track li{margin:8px 0}.programs{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.program{border-radius:24px;background:#fff;color:#111;padding:22px}.program strong{display:block;font-size:20px;margin-bottom:6px}
+    .insights{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.insight-main{background:var(--soft-purple);border-radius:32px;padding:34px;min-height:330px;display:flex;flex-direction:column;justify-content:space-between}.insight-main h3{font-size:38px;line-height:1.02;letter-spacing:-.05em;margin:0}.insight-side{display:grid;gap:18px}.mini{border:1px solid var(--line);border-radius:28px;padding:24px;background:#fff}.mini h3{margin:0 0 10px;font-size:22px}.mini p{margin:0;color:#5c6267}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:28px}.contact-card{background:#fff;border-radius:34px;padding:34px;border:1px solid var(--line)}.contact-card h3{font-size:30px;margin:0 0 16px;letter-spacing:-.04em}.form{display:grid;gap:12px}.input,.textarea,select{width:100%;border:1px solid #ddd;border-radius:18px;padding:14px 16px;font:inherit;background:#fff}.textarea{min-height:130px;resize:vertical}.contact-list{display:grid;gap:14px;margin-top:22px}.contact-item{padding:18px;border-radius:22px;background:var(--soft);font-weight:700}.footer{background:#050505;color:#fff;padding:40px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer img{width:140px}.footer small{color:#bdbdbd}
+    @media(max-width:980px){.links,.nav-actions .btn-ghost{display:none}.menu-btn{display:inline-flex}.links.open{display:flex;position:absolute;left:20px;right:20px;top:86px;flex-direction:column;align-items:flex-start;background:#fff;border:1px solid #ddd;border-radius:24px;padding:22px;box-shadow:0 18px 50px rgba(0,0,0,.12)}.hero-inner,.split,.contact,.insights{grid-template-columns:1fr}.grid-4,.service-grid,.academy,.programs{grid-template-columns:1fr 1fr}.hero-panel{min-height:360px}.section-head{display:block}}
+    @media(max-width:640px){.container{width:min(100% - 28px,var(--max))}.brand img{width:138px}.nav{height:70px}.hero-inner{padding:58px 0 48px}h1{font-size:46px}.grid-4,.service-grid,.academy,.programs{grid-template-columns:1fr}.metric-row{grid-template-columns:1fr}.section{padding:62px 0}.footer-inner{display:block}.footer small{display:block;margin-top:18px}.btn{width:100%}.hero-cta{width:100%}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#accueil" aria-label="Accueil CEHPI"><img src="logo-cehpi.png" alt="CEHPI"></a>
+      <nav class="links" id="navLinks" aria-label="Navigation principale">
+        <a href="#a-propos">À propos</a><a href="#services">Services</a><a href="#recherche">Recherche</a><a href="#academie">Académie</a><a href="#publications">Publications</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions"><a class="btn btn-ghost" href="mailto:contact@cehpi.com">Échanger avec un expert</a><button class="menu-btn" id="menuBtn">Menu</button></div>
+    </div>
+  </header>
+  <main id="accueil">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <div class="eyebrow"><span class="dot"></span>Health & Pharmaceutical Intelligence</div>
+          <h1>Produire des données probantes. Éclairer les décisions. Renforcer les systèmes.</h1>
+          <p class="lead">CEHPI accompagne les gouvernements, les organisations de santé mondiale et les acteurs du secteur pharmaceutique dans la production, l’analyse et l’utilisation de données probantes de haute qualité afin d’améliorer les décisions en santé publique et les politiques de santé.</p>
+          <div class="hero-cta"><a class="btn btn-primary" href="mailto:contact@cehpi.com?subject=Demande%20de%20proposition%20-%20CEHPI">Demander une proposition</a><a class="btn btn-ghost" href="#services">Explorer nos services</a></div>
+        </div>
+        <aside class="hero-panel" aria-label="Positionnement CEHPI">
+          <div class="panel-content"><div class="panel-kicker">Centre d’expertise indépendant</div><div class="panel-title">La science décisionnelle appliquée à la santé publique et au secteur pharmaceutique.</div><p class="panel-text">À l’interface de l’épidémiologie, de la science réglementaire, de l’économie de la santé et de l’intelligence pharmaceutique.</p></div>
+          <div class="metric-row"><div class="metric"><strong>20+</strong><span>publications scientifiques</span></div><div class="metric"><strong>FR/EN</strong><span>excellence bilingue</span></div><div class="metric"><strong>LMICs</strong><span>contextes à ressources limitées</span></div></div>
+        </aside>
+      </div>
+    </section>
+    <section class="section" id="a-propos">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Qui sommes-nous ?</div><h2>Transformer les données complexes en informations stratégiques.</h2></div><p class="section-copy">CEHPI est un centre d’expertise spécialisé dans le renforcement des capacités de production, d’analyse et d’utilisation des données probantes dans les systèmes de santé publique et pharmaceutiques.</p></div>
+        <div class="grid-4">
+          <article class="card accent-card"><div class="num">01</div><h3>Vision</h3><p>Devenir un centre d’excellence de référence en science décisionnelle en santé publique, en particulier dans les contextes à ressources limitées.</p></article>
+          <article class="card"><div class="num">02</div><h3>Mission</h3><p>Doter les individus et les institutions des outils, méthodes et capacités nécessaires pour produire, analyser et utiliser des données probantes.</p></article>
+          <article class="card"><div class="num">03</div><h3>Approche</h3><p>Combler le fossé entre production scientifique et action, en renforçant les systèmes décisionnels fondés sur des preuves.</p></article>
+          <article class="card"><div class="num">04</div><h3>Valeurs</h3><p>Rigueur scientifique, pertinence contextuelle, orientation vers l’impact et excellence bilingue anglais / français.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section section-dark">
+      <div class="container split">
+        <div><div class="kicker">Fondateur</div><h2>Une expertise senior à l’interface entre recherche, politiques et mise en œuvre.</h2></div>
+        <div class="founder"><h3>Dr Lassané Kaboré, PharmD, MSc, MSPH, PhD</h3><p><strong>Fondateur et Consultant principal.</strong> Expert senior en santé publique avec près de 20 ans d’expérience, notamment au Ministère de la Santé du Burkina Faso, à l’Agence de Médecine Préventive, PATH et Gavi, l’Alliance du Vaccin.</p><div class="tags"><span class="tag green">Épidémiologie</span><span class="tag purple">Pharmacoépidémiologie</span><span class="tag">Données en vie réelle</span><span class="tag green">Recherche clinique</span><span class="tag purple">Biostatistique</span></div></div>
+      </div>
+    </section>
+    <section class="section section-soft" id="services">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Nos domaines d’intervention</div><h2>Quatre piliers complémentaires pour renforcer les décisions.</h2></div><p class="section-copy">CEHPI ne produit pas seulement des données : il contribue à renforcer les systèmes de décision.</p></div>
+        <div class="grid-4">
+          <article class="card"><div class="num">01</div><h3>Conseil et accompagnement stratégique</h3><p>Appui aux décideurs publics, régulateurs, organisations internationales et acteurs privés.</p></article>
+          <article class="card"><div class="num">02</div><h3>Recherche et évaluation</h3><p>Études rigoureuses et travaux analytiques pour produire des données probantes robustes.</p></article>
+          <article class="card"><div class="num">03</div><h3>Renforcement des capacités</h3><p>Formations pratiques, ateliers, coaching et programmes institutionnels sur mesure.</p></article>
+          <article class="card accent-card"><div class="num">04</div><h3>Académie professionnelle CEHPI</h3><p>Un écosystème structuré couvrant tout le cycle décisionnel en santé publique.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="recherche">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Services</div><h2>Des solutions techniques, stratégiques et opérationnelles.</h2></div></div>
+        <div class="service-grid">
+          <article class="service"><h3>Conseil et accompagnement</h3><ul><li>Intelligence réglementaire</li><li>Conseil pharmaceutique pour assurances santé</li><li>Analyse de marché et politiques de santé</li><li>Outils d’aide à la décision</li><li>Conception stratégique de programmes</li></ul></article>
+          <article class="service featured"><h3>Recherche et évaluation</h3><ul><li>Recherche en santé publique et clinique</li><li>Enquêtes sanitaires et démographiques</li><li>Modélisation mathématique</li><li>Pharmacoépidémiologie et données en vie réelle</li><li>ETS, économie de la santé et HEOR</li></ul></article>
+          <article class="service"><h3>Renforcement des capacités</h3><ul><li>Formations techniques</li><li>Ateliers pratiques</li><li>Coaching et mentorat</li><li>Programmes institutionnels sur mesure</li><li>Approche terrain orientée décision</li></ul></article>
+        </div>
+      </div>
+    </section>
+    <section class="section section-dark" id="academie">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Académie professionnelle</div><h2>Un écosystème de formation pour l’ensemble du cycle décisionnel.</h2></div><p class="section-copy">Programmes certifiants pour le développement de carrière et programmes sur mesure pour ministères, régulateurs et organisations.</p></div>
+        <div class="academy">
+          <article class="track"><h3>Pôle 1 — Production des données probantes</h3><ul><li>Épidémiologie</li><li>Pharmacoépidémiologie</li><li>Efficacité vaccinale</li><li>Enquêtes de santé</li><li>Modélisation</li></ul></article>
+          <article class="track"><h3>Pôle 2 — Analyse et décisions</h3><ul><li>Évaluation bénéfice–risque</li><li>Évaluation des technologies de santé</li><li>Évaluation réglementaire</li><li>Données en vie réelle</li></ul></article>
+          <article class="track"><h3>Pôle 3 — Mise en œuvre et communication</h3><ul><li>Analyse d’impact budgétaire</li><li>Économie de la santé</li><li>Rédaction de politiques</li><li>Communication en santé</li></ul></article>
+        </div>
+        <div class="programs"><div class="program"><strong>Catalogue de formations</strong><span>Parcours techniques et pratiques.</span></div><div class="program"><strong>Masterclasses</strong><span>Sessions ciblées de haut niveau.</span></div><div class="program"><strong>SeminalSeminars®</strong><span>Webinaires de réflexion stratégique.</span></div></div>
+      </div>
+    </section>
+    <section class="section" id="publications">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Publications et insights</div><h2>Installer CEHPI comme référence en science décisionnelle.</h2></div></div>
+        <div class="insights"><article class="insight-main"><div><div class="kicker">À venir</div><h3>Articles scientifiques, rapports techniques, notes de politique et analyses.</h3></div><p>Cette rubrique accueillera les publications, commentaires et ressources utiles aux décideurs, chercheurs et professionnels du secteur pharmaceutique.</p></article><div class="insight-side"><article class="mini"><h3>Notes de politique</h3><p>Des synthèses directement exploitables pour éclairer les décisions.</p></article><article class="mini"><h3>Rapports techniques</h3><p>Des analyses rigoureuses, contextualisées et orientées vers l’impact.</p></article></div></div>
+      </div>
+    </section>
+    <section class="section section-soft" id="contact">
+      <div class="container contact">
+        <div><div class="kicker">Contact</div><h2>Renforçons ensemble les systèmes décisionnels en santé.</h2><p class="section-copy">Pour une demande de proposition, une collaboration institutionnelle ou un programme de formation sur mesure, contactez CEHPI.</p><div class="contact-list"><div class="contact-item">Ouagadougou, Burkina Faso — portée internationale</div><div class="contact-item">Email : <a href="mailto:contact@cehpi.com">contact@cehpi.com</a></div><div class="contact-item">Téléphone : <a href="tel:+22650708686">+226 50 70 86 86</a></div></div></div>
+        <div class="contact-card"><h3>Envoyer une demande</h3><form class="form" action="mailto:contact@cehpi.com" method="post" enctype="text/plain"><input class="input" name="Nom" placeholder="Nom" required><input class="input" name="Organisation" placeholder="Organisation"><input class="input" name="Email" placeholder="Email" type="email" required><select name="Type de demande"><option>Demander une proposition</option><option>Échanger avec un expert</option><option>Formation / Académie</option><option>Recherche / Évaluation</option></select><textarea class="textarea" name="Message" placeholder="Message"></textarea><button class="btn btn-primary" type="submit">Envoyer</button></form></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><img src="logo-cehpi.png" alt="CEHPI"><small>© <span id="year"></span> CEHPI — Center for Expertise in Health & Pharmaceutical Intelligence. Tous droits réservés.</small></div></footer>
+  <script>
+    const menuBtn=document.getElementById('menuBtn');
+    const navLinks=document.getElementById('navLinks');
+    menuBtn?.addEventListener('click',()=>navLinks.classList.toggle('open'));
+    navLinks?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
